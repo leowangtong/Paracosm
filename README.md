@@ -1,15 +1,18 @@
-<div>
+<div align='center'>
+<h1>Generating a Paracosm for Training-Free Zero-Shot Composed Image Retrieval</h1>
 	
-# Generating a Paracosm for Training-Free Zero-Shot Composed Image Retrieval 
+<a href="https://leowangtong.github.io/" target="_blank">Tong Wang</a><sup>1</sup>,
+<a href="https://yunhan-zhao.github.io/" target="_blank">Yunhan Zhao</a><sup>2</sup>,
+<a href="https://aimerykong.github.io/" target="_blank">Shu Kong</a><sup>1,3</sup>
 
-**Supplemental Material for CVPR 2026 Submission**
-
-This is the implementation for the paper `Generating a Paracosm for Training-Free Zero-Shot Composed Image Retrieval`:
-- We provide clear instructions for Paracosm, including `environment setting`, `dataset preparation `.
-- We provide `Paracosm_demo.ipynb` to showcase the complete implementation of Paracosm. 
-
-
+<span><sup>1</sup>University of Macau,</span>
+<span><sup>2</sup>Google DeepMind,</span>
+<span><sup>3</sup>Institute of Collaborative Innovation</span>
+ 
+<!-- <a href="https://arxiv.org/abs/2506.04713"><img src='https://img.shields.io/badge/arXiv-Paracosm-red' alt='Paper PDF'></a> -->
+<!-- <a href="https://hannawang09.github.io/projects/vest/"><img src='https://img.shields.io/badge/Project_Page-VEST-green' alt='Project Page'></a> -->
 </div>
+
 
 ## Overview
 ### Abstract
@@ -42,3 +45,31 @@ Please follow the instructions in [DATASET.md](DATASETS.md) to prepare the datas
 
 ## Demo for Paracosm
 [Paracosm_demo.ipynb](Paracosm_demo.ipynb) provides a demo implementation of the Paracosm for the processes of mental image generation, description generation, and synthetic counterpart generation. Additionally, it also presents the retrieval process of Paracosm on the CIRCO validation set. 
+
+
+
+## Performance
+<div align='center'>
+    <img src='performance.png' alt='performance' width=50%>
+</div>
+
+
+
+## Acknowledgments
+
+Our code is built on [SEARLE(ICCV'23)](https://github.com/miccunifi/SEARLE/tree/main).
+
+
+
+<!-- ## Citation
+
+If you find our project useful, please consider citing:
+
+```bibtex
+@article{wang2025enabling,
+    title={Enabling Validation for Robust Few-Shot Recognition}, 
+    author={Wang, Hanxin and Liu, Tian and Kong, Shu},
+    journal={arXiv preprint arXiv:2506.04713},
+    year={2025}
+}
+``` -->
