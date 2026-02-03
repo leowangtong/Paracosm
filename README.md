@@ -6,7 +6,7 @@
 <a href="https://aimerykong.github.io/" target="_blank">Shu Kong</a><sup>1,3</sup>
 
 <span><sup>1</sup>University of Macau,</span>
-<span><sup>2</sup>Google DeepMind,</span>
+<span><sup>2</sup>UC Irvine,</span>
 <span><sup>3</sup>Institute of Collaborative Innovation</span>
  
 <!-- <a href="https://arxiv.org/abs/2506.04713"><img src='https://img.shields.io/badge/arXiv-Paracosm-red' alt='Paper PDF'></a> -->
