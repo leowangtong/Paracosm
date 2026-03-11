@@ -143,56 +143,11 @@ def get_recall(indices, targets):
         return torch.Tensor(recall).float().mean()
 
 
-@torch.no_grad()
-def genecis_compute(relative_test_loader, clip_model):
-    R_1, R_2, R_3 = 0, 0, 0
-    for batch in tqdm(relative_test_loader):
-        relative_captions = batch['caption']
-        relative_captions = clip.tokenize(relative_captions, context_length=77, truncate=True).to(device)
-        mental_img_des = batch['mental_img_des']
-        mental_img_des = clip.tokenize(mental_img_des, context_length=77, truncate=True).to(device)
-
-        blip_ref_img = batch['reference_image'].to(device)
-        mental_img = batch['mental_img'].to(device)
-
-        gallery_and_target = batch['gallery_and_target'].squeeze(0).to(device)
-        synthetic_img = batch['synthetic_img'].squeeze(0).to(device)
-
-        target_rank = batch['target_rank'].to(device)
-
-        with torch.no_grad():
-            relative_captions_features = clip_model.encode_text(relative_captions)
-            mental_img_des_features = clip_model.encode_text(mental_img_des)
-            mental_img_features = clip_model.encode_image(mental_img)
-
-            gallery_and_target_features = clip_model.encode_image(gallery_and_target)
-            synthetic_img_features = clip_model.encode_image(synthetic_img)
-
-            lam = 0.3
-            predicted_features = lam*F.normalize(mental_img_des_features + mental_img_features)
-            predicted_features_caption = (1 - lam) * F.normalize(relative_captions_features)
-
-            index_features = lam * F.normalize(gallery_and_target_features + synthetic_img_features)
-
-        similarity = predicted_features @ index_features.T
-        similarity_caption = predicted_features_caption @ index_features.T
-        _, sort_idxs = (similarity + similarity_caption).sort(dim=-1, descending=True)
-
-        R_1 += get_recall(sort_idxs[:, :1], target_rank) * 100
-        R_2 += get_recall(sort_idxs[:, :2], target_rank) * 100
-        R_3 += get_recall(sort_idxs[:, :3], target_rank) * 100
-
-    R_1 = R_1 / len(relative_test_loader)
-    R_2 = R_2 / len(relative_test_loader)
-    R_3 = R_3 / len(relative_test_loader)
-
-    return R_1, R_2, R_3
-
 
 def main():
     parser = ArgumentParser()
     parser.add_argument("--exp-name", type=str, help="Experiment to evaluate")
-    parser.add_argument("--dataset", default="genecis", type=str, choices=['fashioniq', 'genecis'], help="Dataset to use")
+    parser.add_argument("--dataset", default="fashioniq", type=str, choices=['fashioniq'], help="Dataset to use")
     parser.add_argument("--dataset-path", default="./data_CIR/", type=str, help="Path to the dataset")
     parser.add_argument("--eval-type", default="clip_vitb", type=str, choices=['clip_vitb', 'clip_vitl', 'openclip_vitb', 'openclip_vitl'])
 
@@ -239,29 +194,6 @@ def main():
 
         print(f"average_fiq_recall_at10 = {np.mean(recalls_at10):.2f}")
         print(f"average_fiq_recall_at50 = {np.mean(recalls_at50):.2f}")
-
-    if args.dataset.lower() == 'genecis':
-        for dress_type in ['change_attribute', 'focus_attribute', 'change_object', 'focus_object']:
-            prop_file = os.path.join('./data_CIR/GeneCIS/caption', dress_type + '.json')
-            if 'attribute' in dress_type:
-                datapath = './data_CIR/GeneCIS/Visual_Genome/VG_All'
-                genecis_dataset = VAWValSubset(image_dir=datapath, val_split_path=prop_file,
-                                                        data_split=dress_type,
-                                                        preprocess=preprocess)
-
-                relative_test_loader = DataLoader(dataset=genecis_dataset, batch_size=1, num_workers=10,
-                                                  pin_memory=False, collate_fn=collate_fn, shuffle=False)
-            else:
-                genecis_dataset = COCOValSubset(val_split_path=prop_file, data_split=dress_type,
-                                                         preprocess=preprocess)
-
-                relative_test_loader = DataLoader(dataset=genecis_dataset, batch_size=1, num_workers=10,
-                                                  pin_memory=False, collate_fn=collate_fn, shuffle=False)
-
-            R_1, R_2, R_3 = genecis_compute(relative_test_loader, clip_model)
-            print('R_1: ' + str(R_1))
-            print('R_2: ' + str(R_2))
-            print('R_3: ' + str(R_3))
 
 
 if __name__ == '__main__':
