@@ -7,7 +7,6 @@ $data_CIR/
 |–– CIRCO/
 |–– CIRR/
 |–– FASHIONIQ/
-|–– GeneCIS/
 ```
 
 ***
@@ -18,8 +17,6 @@ Datasets list:
 - [CIRCO](#circo-back_to_top)
 - [CIRR](#cirr-back_to_top)
 - [FASHIONIQ](#fashion-iq-back_to_top)
-- [GeneCIS](#genecis-back_to_top)
-
 
 
 
@@ -87,28 +84,6 @@ the [**official repository**](https://github.com/XiaoxiaoGuo/fashion-iq).
 |   |   ├── [B00006M009.jpg | B00006M00B.jpg | B00006M6IH.jpg | ...]
 ```
 
-
-
-#### GeneCIS ([Back_to_top](#how-to-download-datasets))
-- Create a folder named `GeneCIS` under `$dataCIR`.
-- Setup the GeneCIS benchmark following the instructions in the [**official repository**](https://github.com/facebookresearch/genecis). You would need to download images from the MS-COCO 2017 validation set and from the VisualGenome1.2 dataset. 
-- The directory structure of CIRR should look like:
-
-```
-├── GeneCIS
-│   ├── caption
-|   |   ├── change_attribute.json
-|   |   ├── change_object.json
-|   |   ├── focus_attribute.json
-|   |   ├── focus_object.json
-
-│   ├── val2017
-|   |   ├── [000000000139.jpg | 000000000285.jpg | ...]
-
-│   ├── Visual_Genome
-|   |   ├── VG_All
-|   |   |   ├── [1.jpg | 2.jpg | ...]
-```
 
 
 
