@@ -1,4 +1,4 @@
-<div align='center'>
+<img width="2542" height="694" alt="image" src="https://github.com/user-attachments/assets/8114d10b-9bb3-4c73-958e-6ac6685e285f" /><div align='center'>
 <h1>Generating a Paracosm for Training-Free Zero-Shot Composed Image Retrieval</h1>
 	
 <a href="https://leowangtong.github.io/" target="_blank">Tong Wang</a><sup>1</sup>,
@@ -23,6 +23,11 @@
 ![Paracosm](Paracosm.png)
 > **Flowchart of our training-free zero-shot CIR method Paracosm.** Given a multimodal query that consists of a reference image and a modification text, we feed it to an LMM to generate a ''mental image''. We further generate a brief description for it. Both the ''mental image'' and description, as well as the modification text, are used as feature representations for the query. As the ''mental image'' is synthetic, we mitigate synthetic-to-real domain gaps by generating synthetic counterparts of database images. To do so, we use the LMM to generate *detailed* descriptions, which are used as prompts for image generation. For a database image, we use both itself (i.e., the real photo) and its synthetic counterpart as representation for retrieval. In sum, our method uses LMMs to create a virtual **paracosm**, where it matches the query and database images.
 
+
+## News
+
+- **2026-01-31:** Paracosm code is released.
+- **2026-01-31:** arXiv preprint is published.
 
 ## Environment Setting
 
