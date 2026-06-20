@@ -140,28 +140,21 @@
             <h2 class="title is-3">Motivation</h2>
             <div class="content has-text-justified">
               <p style="text-align: justify;">
-                <!-- Few-Shot Recognition (FSR) aims to train a classification model with only a few labeled
-                examples per concept provided by a downstream task. Inspired by the significant improvements
-                achieved by <b>retrieval-augmented learning (RAL)</b> in zero-shot recognition with Vision-Language Models
-                (VLMs, e.g., CLIP, OpenCLIP), we adapt a pretrained VLM and, for the first time, explore RAL for FSR
-                 by retrieving relevant images from VLMs' pretraining dataset (e.g., LAION). -->
-                 Few-Shot Recognition (FSR) aims to train a classification model with only a few labeled examples per concept
-                 concerned by a downstream task. With an <b>open-world philosophy</b>, we exploit Vision-Language Model (VLM, which
-                 is pretrained in the open world), and <b>open data</b> (e.g., the VLM's pretraining data) to facilitate few-shot learning.
+                Composed Image Retrieval (CIR) is motivated by the real-world need to search for target images using a multimodal query 
+                (a reference image combined with text instructions on how to alter it). The fundamental challenge driving our paper is that
+                the intended target is merely an implicit "mental image" that does not physically exist in the query.
+                While current zero-shot methods attempt to solve this by using Large Multimodal Models (LMMs) to translate
+                the multimodal query into a purely textual description, we point out a major flaw: text descriptions act as an information
+                bottleneck, stripping away the rich visual details necessary for accurate matching.
 
                 <br>
                 <br>
 
-                <!-- Additionally, in contrast to prior FSR methods (prompt-learning or adapter-learning) that focus on parameter-efficient finetuning (PEFT), our work is motivated
-                by the <b>realistic data annotation application</b>, where we priortize accuracy over parameter efficiency. To this end,
-                we explore full-model finetuning using few-shot and retrieved data.
-                Through the process, we identify novel challenges and opportunities. -->
-
-                Furthermore, our few-shot recognition setup is motivated by <b>data annotation application</b>, where there are annotation
-                guidelines that provide a few visual examples for each concept concerned by the downstream task. Hence, we explore methods to
-                prioritize recognition accuracy without limiting to parameter-efficient finetuning (PEFT) such as prompt tuning or
-                adapter learning, both of which are popular few-shot learning methods. We explore methods as simple as full-model
-                finetuning over few-shot and/or retrieved data. Through the process, we identify novel challenges and opportunities.
+                To overcome this, we are motivated to address CIR from first principles by directly generating the "mental image"
+                via image editing. Furthermore, we recognize that introducing a synthetic query image creates a severe synthetic-to-real domain gap
+                when matched against real database images. This insight drives our final motivation: to preprocess the database images into synthetic 
+                counterparts, creating a balanced, virtual matching space, a "Paracosm", where synthetic-to-synthetic and real-to-real alignment can
+                successfully occur without requiring any model training.
 
               </p>
             </div>
@@ -183,27 +176,23 @@
                 <img src="static/images/sota_plots.png" alt="1" style="width: 500px; height: auto; display: block; margin: 0 auto;"/>
                 <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px; color: #333;">
                   <!-- We retrieve relevent images from LAION  -->
-                  Over nine standard benchmark datasets, we show that:
+                  Our extensive evaluations of Paracosm on standard Composed Image Retrieval (CIR) benchmarks yield the following key findings:
                   <ol>
                     <!-- <li><span style="color: orange;">finetuning on retrieved data</span> merely outperforms zero-shot methods due to domain gap and imbalanced distribution.</li> -->
-                    <li><span style="color: orange;">Finetuning a VLM on large amounts of retrieved data</span> barely
-                      surpasses state-of-the-art zero-shot methods due to the <b>domain gaps</b> of retrieved data
-                      compared to few-shot annotated data and its <b>imbalanced distribution</b> issues.</li>
+                    <li><span style="color: orange;">State-of-the-Art Zero-Shot Performance:</span> <b>Paracosm</b> significantly
+                      outperforms existing training-free zero-shot methods on challenging benchmarks (CIRR, CIRCO, and Fashion IQ),
+                      and even surpasses several supervised approaches that require costly annotated triplet data.</li>
 
-                    <li>Simply <span style="color: green;">finetuning a VLM on few-shot examples alone</span> significantly outperforms
-                      prior FSR methods (>3%), without suffering from overfitting issue. Moreover, finetuning on the mixed retrieved
-                      and few-shot data
-                      yields even better results.</li>
+                    <li><span style="color: green;">Crucial Domain-Gap Mitigation:</span> Generating synthetic counterparts for
+                      database images drastically boosts retrieval performance, proving that matching synthetic queries with synthetic database
+                      representations effectively bridges the synthetic-to-real domain gap.</li>
 
-                    <li>To mitigate <b>domain gaps</b> and <b>imbalanced distribution</b> issues, we propose a simple
-                      yet effective method:
-                      <span style="color: red;"><b>S</b>tage-<b>W</b>ise retrieval-<b>A</b>ugmented fine<b>T</b>uning (<b>SWAT</b>)</span>,
-                      resoundingly surpassing prior FSR methods by >6% in accuracy,
-                  with 20-30% accuracy improvements on challenging datasets such as Semi-Aves, Aircraft, EuroSAT (see details in the paper).
-                      <!-- which first
-                      end-to-end finetune on mixed retrieved and few-shot data and then retrain
-                      the classifier solely on the few-shot data. -->
+                     
+                    <li><span style="color: red;">Image Editing Superiority:</span> Directly editing the reference image using an LMM preserves
+                      far richer visual context and yields better retrieval accuracy than purely generating a pseudo-target image from text.
                     </li>
+
+                    
                   </ol>
 
                   <!-- Over nine standard benchmark datasets, SWAT resoundingly outperforms prior FSR methods by >6% in accuracy, -->
