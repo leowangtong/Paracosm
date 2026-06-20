@@ -61,8 +61,6 @@
               <span class="author-block">
                 <a href="https://yunhan-zhao.github.io/" target="_blank">Yunhan Zhao</a><sup>1</sup>,</span>
               <span class="author-block">
-                <!-- <a href="https://shubhamprshr27.github.io/" target="_blank">Shubham Parashar</a><sup>1</sup>,</span> -->
-              <!-- <span class="author-block"> -->
                 <a href="https://aimerykong.github.io/" target="_blank">Shu Kong</a><sup>1</sup><sup>,</sup><sup>2</sup>
               </span>
             </div>
@@ -109,7 +107,7 @@
                 </span>
 
                 <!-- <span class="link-block">
-                  <a href="https://tian1327.github.io/data/SWAT_CVPR'25_poster.pdf" target="_blank"
+                  <a href="https://leowangtong.github.io/data/Paracosm_poster.pdf" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -121,11 +119,7 @@
                   <h2><strong style="color: red; font-size: x-large;">ECCV 2026</strong></h2>
               </div>
             </div>
-            <!-- <h1><strong style="color: red; font-size: x-large;">CVPR 2024</strong></h1> -->
             <!-- <h2 class="subtitle has-text-centered"> -->
-              <!-- <b>tl;dr:</b> We explore retriaval-augmented learning for<br>few-shot recognition using Vision-Language Models</h2> -->
-              <!-- <b>tl;dr:</b> We adapt a pretrained Vision-Language Model and repurpose its<br>pretraining data to boost few-shot recognition performance</h2> -->
-
           </div>
         </div>
       </div>
@@ -194,9 +188,6 @@
 
                     
                   </ol>
-
-                  <!-- Over nine standard benchmark datasets, SWAT resoundingly outperforms prior FSR methods by >6% in accuracy, -->
-                  <!-- with 20-30% accuracy improvements on challenging datasets such as Semi-Aves, Aircraft, EuroSAT. -->
                 </p>
               </div>
 
@@ -207,67 +198,27 @@
     </section>
 
 
-    <!-- End paper overview -->
-
-  <!-- Paper abstract -->
-  <!-- <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p style="text-align: justify;">
-              Few-shot recognition aims to train a classification model with only
-              a few labeled examples of pre-defined concepts, where annotation can
-              be costly in a downstream task. In another related research area,
-              zero-shot recognition, which assumes no access to any downstream-task
-              data, has been greatly advanced by using pretrained Vision-Language
-              Models (VLMs). In this area, retrieval-augmented learning (RAL)
-              effectively boosts zero-shot accuracy by retrieving and learning from
-              external data relevant to downstream concepts. Motivated by these
-              advancements, our work explores RAL for few-shot recognition.
-              While seemingly straightforward despite being under-explored in the
-              literature (till now!), we present novel challenges and opportunities
-              for applying RAL for few-shot recognition. First, perhaps surprisingly,
-              simply finetuning the VLM on a large amount of retrieved data barely
-              surpasses state-of-the-art zero-shot methods due to the imbalanced
-              distribution of retrieved data and its domain gaps compared to few-shot
-              annotated data. Second, finetuning a VLM on few-shot examples alone
-              significantly outperforms prior methods, and finetuning on the mix of
-              retrieved and few-shot data yields even better results. Third, to
-              mitigate the imbalanced distribution and domain gap issue, we propose
-              Stage-Wise Augmented fineTuning (SWAT) method, which involves end-to-end
-              finetuning on mixed data for the first stage and retraining the
-              classifier solely on the few-shot data in the second stage. Extensive
-              experiments show that SWAT achieves the best performance on standard
-              benchmark datasets, resoundingly outperforming prior works by ~10% in
-              accuracy.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- End paper abstract -->
-
-
 
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Challenges</h2>
-          <h3 class="title is-4">Retrieved data has domain gaps and follows an imbalanced distribution, degrading finetuning performance</h3>
+          <h2 class="title is-3">Paracosm</h2>
           <div class="content has-text-justified">
 
             <div class="item">
               <!-- Your image here -->
-              <img src="static/images/challenges.png" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+              <img src="static/images/Paracosm" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
               <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px; color: #333;">
-                Left: we show that the retrieved data exhibits different visual patterns
-                (styles, backgrounds, resolutions, semantics, etc.) compared to the downstream few-shot data.
-                Right: the retrieved data follows an imbalanced distribution, where some classes
-                naturally appear less frequently than others. We retrieve relevant images from <a href="https://laion.ai/blog/laion-400-open-dataset/" style="color: #3273dc;">LAION</a>
-                dataset following <a href="https://shubhamprshr27.github.io/neglected-tails-of-vlms/"  style="color: #3273dc;">REAL</a>.
+                Our framework, <b>Paracosm</b>, is a training-free, zero-shot Composed Image Retrieval (CIR) method that
+                operates by mapping both multimodal queries and database images into a shared virtual space to perform accurate matching
+                from first principles. For the query pipeline, we leverage a Large Multimodal Model (LMM) with image-editing capabilities
+                to directly alter the reference image based on the modification text, generating a "mental image" alongside a 
+                concise, single-sentence visual description. Concurrently, to eliminate the synthetic-to-real domain gap, our database pipeline
+                processes each real image offline by extracting a highly detailed LMM description and passing it into a text-to-image generator
+                to create a synthetic counterpart. Finally, we employ a pretrained Vision-Language Model to extract and fuse features from both real
+                and synthetic representations of the queries and database images, computing their cosine similarity to retrieve the optimal target image
+                without requiring any fine-tuning.
               </p>
             </div>
 
@@ -277,36 +228,6 @@
     </div>
   </section>
 
-
-
-  <section class="section hero is-light1">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Solution</h2>
-          <h3 class="title is-4">Stage-Wise retrieval-Augmented fineTuning (SWAT)</h3>
-          <div class="content has-text-justified">
-
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/swat.png" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-              <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px; color: #333;">
-                Given a data annotation guideline consisting of few-shot annotated images,
-                SWAT retrieves <b>open data</b> relevant to the downstream concepts (e.g., from VLM's pretraining dataset <a href="https://laion.ai/blog/laion-400-open-dataset/">LAION</a>),
-                and then finetunes a pretrained VLM (e.g., <a href="https://github.com/mlfoundations/open_clip?tab=readme-ov-file">OpenCLIP</a>) following a stage-wise strategy:
-                <ul>
-                  <li>Stage 1: end-to-end finetuning on the mixed retrieved and few-shot data.</li>
-                  <li>Stage 2: retraining the classifier solely on the balanced few-shot images.</li>
-                </ul>
-                SWAT effectively mitigates the domain gaps and imbalanced distribution of retrieved data,
-                significantly outperforming previous FSR methods, as shown below.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <section class="section hero is-light">
