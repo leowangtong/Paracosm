@@ -246,7 +246,6 @@
                   <li>Paracosm significantly outperforms all existing zero-shot methods regardless of the underlying backbone.</li>
                   <li>Despite being entirely training-free, Paracosm's retrieval performance surpasses several established supervised learning approaches that rely on costly annotated training triplets.</li>
                 </ul>
-                <!-- We mark the accuracy improvements over previous SOTA FSR method <a href="https://arxiv.org/abs/2312.12730" style="color: #3273dc;">CLAP</a> in <span style="color: green;">superscripts</span>. -->
               </p>
           </div>
         </div>
@@ -267,24 +266,19 @@
           <div class="content has-text-justified">
             <div class="item">
               <!-- Your image here -->
-              <img src="static/images/results2.png" alt="1" style="width: 2000px; height: auto; display: block; margin: 0 auto;"/>
+              <img src="static/images/results2.png" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
               <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px; color: #333;">
                 <!-- Compareing SWAT -->
-                <ul>
-                  <li>When fintuning on retrieved data only for the first stage, retraining classifier on few-shot data yields significant improvement on
-                    both common and rare class accuracies, confirming SWAT mitigates domain gaps.</li>
+                <ul> 
+                  <li>It validates the necessity of explicitly constructing features for the multimodal query—proving that leveraging
+                    the generated mental image ($I_{mental}$) alongside its concise text summary provides a dramatic lift over traditional
+                    text-only baseline translations.</li>
                   <li>
-                    Across all stage-1 training scenarios, stage-2 training improves rare classes much more than the common classes, validating the mitigation
-                    of imbalanced learning.
+                    The ablation data underscores that synthesizing synthetic counterparts for the database images is highly effective.
+                    It explicitly demonstrates that bridging the synthetic-to-real domain gap through this dual-path database alignment
+                    yields a critical performance jump.
                   </li>
-                  <!-- Across different finetuning scenario in stage 1, SWAT effectively improves the recognition
-                  accuracy on both common and rare classes (least frequent 10%). The improvement on the rare
-                  classes is more significant than the common classes, confirming that SWAT mitigates the
-                  imbalanced learning.  -->
                 </ul>
-                  We mark the accuracy improvements over stage-1 model in
-                  <span style="color: green;">superscripts</span> and standard deviation across three different
-                  runs in <span style="color: grey;">subscripts</span>.
               </p>
             </div>
 
@@ -301,11 +295,16 @@
 
         <div class="column is-four-fifths">
           <!-- <h2 class="title is-4">Solutions</h2> -->
-          <h3 class="title is-4">More examples of retrieved data for various downstream concepts</h3>
+          <h3 class="title is-4">Failure cases</h3>
           <div class="content has-text-justified">
-            <img src="static/images/retrieved_data.png" alt="1" style="width: 2000px; height: auto; display: block; margin: 0 auto;"/>
+            <img src="static/images/failure_cases.png" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
               <p>
-                <!-- We show -->
+                Paracosm can fail due to limitations of generative models that can generate implausible and counterfactual mental images. 
+                Four examples, respectively, demonstrate different failures of Paracosm. (1) It incorrectly generates a cartoon-style duck,
+                making it fail to return the correct database image, which captures a plush toy duck. (2) It generates a counterfactual oven
+                that has gas burners on its door, making it incorrectly retrieve an image that captures a burning oven.
+                (3) It fails to edit the door color of the specified refrigerator and hence fails to return the correct target image.
+                (4) It fails to comprehend the multimodal query, resulting in an incorrect mental image and hence failing to return the target image.
               </p>
           </div>
         </div>
