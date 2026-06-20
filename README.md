@@ -26,7 +26,7 @@
 
 ## News
 
-- **2026-01-31:** Paracosm code is released.
+- **2026-02-03:** Paracosm code is released.
 - **2026-01-31:** arXiv preprint is published.
 
 ## Environment Setting
