@@ -1,4 +1,4 @@
-<img width="2542" height="694" alt="image" src="https://github.com/user-attachments/assets/8114d10b-9bb3-4c73-958e-6ac6685e285f" /><div align='center'>
+<div align='center'>
 <h1>Generating a Paracosm for Training-Free Zero-Shot Composed Image Retrieval</h1>
 	
 <a href="https://leowangtong.github.io/" target="_blank">Tong Wang</a><sup>1</sup>,
