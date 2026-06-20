@@ -10,7 +10,7 @@
 <span><sup>3</sup>Institute of Collaborative Innovation</span>
  
 <a href="https://arxiv.org/abs/2602.00813"><img src='https://img.shields.io/badge/arXiv-Paracosm-red' alt='Paper PDF'></a>
-<!-- <a href="https://hannawang09.github.io/projects/vest/"><img src='https://img.shields.io/badge/Project_Page-VEST-green' alt='Project Page'></a> -->
+<a href="https://leowangtong.github.io/Paracosm/"><img src='https://img.shields.io/badge/Project_Page-Paracosm-green' alt='Project Page'></a>
 </div>
 
 
