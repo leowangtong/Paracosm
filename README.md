@@ -70,10 +70,10 @@ Our code is built on [SEARLE(ICCV'23)](https://github.com/miccunifi/SEARLE/tree/
 If you find our project useful, please consider citing:
 
 ```bibtex
-@article{wang2026paracosm,
+@inproceedings{wang2026paracosm,
     title={Generating a Paracosm for Training-Free Zero-Shot Composed Image Retrieval}, 
     author={Tong Wang and Yunhan Zhao and Shu Kong},
-    journal={arXiv preprint arXiv:2602.00813},
+    booktitle={European Conference on Computer Vision (ECCV)},
     year={2026}
 }
 ```
