@@ -13,11 +13,13 @@
 <a href="https://leowangtong.github.io/Paracosm/"><img src='https://img.shields.io/badge/Project_Page-Paracosm-green' alt='Project Page'></a>
 </div>
 
-<div align="center">
+<!-- <div align="center">
   <h3 style="margin-bottom: 0;">
-    <font color="#FF0000"><b>ECCV 2026</b></font>
+    <font color="red"><b>ECCV 2026</b></font>
   </h3>
-</div>
+</div> -->
+
+$$ {\color{red}\Huge \text{ECCV 2026}} $$
 
 ## Overview
 ### Abstract
