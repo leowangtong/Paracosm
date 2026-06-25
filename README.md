@@ -18,8 +18,9 @@
     <font color="red"><b>ECCV 2026</b></font>
   </h3>
 </div> -->
+<!-- <h1 align="center"><font color="red">🔥 ECCV 2026 🔥</font></h1> -->
 
-$$ {\color{red}\Huge \text{ECCV 2026}} $$
+$$ {\color{red}\Huge \text{🔥 ECCV 2026 🔥}} $$
 
 ## Overview
 ### Abstract
