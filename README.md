@@ -15,7 +15,7 @@
 
 <div align="center">
   <h3 style="margin-bottom: 0;">
-    <font color="red"><b>ECCV 2026</b></font>
+    <font color="#FF0000"><b>ECCV 2026</b></font>
   </h3>
 </div>
 
