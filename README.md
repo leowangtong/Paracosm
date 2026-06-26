@@ -34,7 +34,7 @@ $$ {\color{red}\Huge \text{🔥 ECCV 2026 🔥}} $$
 
 ## News
 
-- **2025-06-20:** Paracosm is accepted to ECCV 2026!
+- **2026-06-20:** Paracosm is accepted to ECCV 2026!
 - **2026-02-03:** Paracosm code is released.
 - **2026-01-31:** arXiv preprint is published.
 
