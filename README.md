@@ -34,6 +34,7 @@ $$ {\color{red}\Huge \text{🔥 ECCV 2026 🔥}} $$
 
 ## News
 
+- **2026-08-28:** Features of CIR datasets is released.
 - **2026-06-20:** Paracosm is accepted to ECCV 2026!
 - **2026-02-03:** Paracosm code is released.
 - **2026-01-31:** arXiv preprint is published.
@@ -55,7 +56,9 @@ pip install git+https://github.com/openai/CLIP.git
 
 Please follow the instructions in [DATASET.md](DATASETS.md) to prepare the datasets used in the experiments.
 
+## Features of CIR datasets
 
+To reproduce Paracosm, please download the pre-extracted CIR dataset features via the [link](https://drive.google.com/drive/folders/13LzE0FpmO9n1M8XQTAPd1VPoM6W_cEYB?usp=drive_link). 
 
 ## Demo for Paracosm
 [Paracosm_demo.ipynb](Paracosm_demo.ipynb) provides a demo implementation of the Paracosm for the processes of mental image generation, description generation, and synthetic counterpart generation. Additionally, it also presents the retrieval process of Paracosm on the CIRCO validation set. 
