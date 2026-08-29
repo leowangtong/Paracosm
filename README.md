@@ -60,6 +60,8 @@ Please follow the instructions in [DATASET.md](DATASETS.md) to prepare the datas
 
 To reproduce Paracosm, please download the pre-extracted CIR dataset features via the [link](https://drive.google.com/drive/folders/13LzE0FpmO9n1M8XQTAPd1VPoM6W_cEYB?usp=drive_link). 
 
+We also share the CIRR dataset's mental images and synthetic counterparts [here](https://drive.google.com/drive/folders/13U1wdz6I5FE6-SGCSDBFuMyPwHP99J_d?usp=drive_link). 
+
 ## Demo for Paracosm
 [Paracosm_demo.ipynb](Paracosm_demo.ipynb) provides a demo implementation of the Paracosm for the processes of mental image generation, description generation, and synthetic counterpart generation. Additionally, it also presents the retrieval process of Paracosm on the CIRCO validation set. 
 
