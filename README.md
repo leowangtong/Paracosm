@@ -82,7 +82,7 @@ Our code is built on [SEARLE(ICCV'23)](https://github.com/miccunifi/SEARLE/tree/
 
 ## Citation
 
-If you find our project useful, please consider citing:
+If you find our project helpful, please consider citing:
 
 ```bibtex
 @inproceedings{wang2026paracosm,
