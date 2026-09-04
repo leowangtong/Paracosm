@@ -11,6 +11,9 @@
  
 <a href="https://arxiv.org/abs/2602.00813"><img src='https://img.shields.io/badge/arXiv-Paracosm-red' alt='Paper PDF'></a>
 <a href="https://leowangtong.github.io/Paracosm/"><img src='https://img.shields.io/badge/Project_Page-Paracosm-green' alt='Project Page'></a>
+[![Generic badge](https://img.shields.io/badge/Video-YouTube-red.svg)]([https://www.youtube.com/watch?v=qxpNb9qxDQI](https://youtu.be/Z9Xvi7ADRnc?si=_uQmuIx3W9QXxUdY))
+[![Generic badge](https://img.shields.io/badge/Slides-Link-orange.svg)](/Slides_Paracosm.pdf)
+[![Generic badge](https://img.shields.io/badge/Poster-Link-purple.svg)](/eccv_paracosm_poster.pdf)
 </div>
 
 <!-- <div align="center">
